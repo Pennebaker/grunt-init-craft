@@ -41,8 +41,8 @@ module.exports = (grunt) ->
         sourceMap: false
         includePaths: [
           'src/assets/styles'
-					'bower_components/bourbon/app/assets/stylesheets'
-					'bower_components/neat/app/assets/stylesheets'
+          'bower_components/bourbon/app/assets/stylesheets'
+          'bower_components/neat/app/assets/stylesheets'
           'bower_components/normalize.scss'
         ]
       dist:

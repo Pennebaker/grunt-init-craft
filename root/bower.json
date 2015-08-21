@@ -18,6 +18,6 @@
     "bourbon": "~4.2.4",
     "neat": "~1.7.2",
     "modernizr": "~2.8.3",
-    "normalize.scss": "~3.0.2+normalize.3.0.2"
+    "normalize.scss": "~3.0.2"
   }
 }

@@ -17,13 +17,13 @@ module.exports = (grunt) ->
     watch:
       styles:
         files: ['src/assets/**/*.scss']
-        tasks: ['compile-styles']
+        tasks: ['compile_styles']
       scripts:
         files: ['src/assets/**/*.js']
         tasks: ['uglify']
       templates:
         files: ['src/templates/**/*.html']
-        tasks: ['copy:main']
+        tasks: ['twigRender:prototypes']
       static_files:
         files: ['src/assets/**', 'src/media/**', '!src/assets/**/*.scss', 'src/static_files/**']
         tasks: ['copy:main']
@@ -77,13 +77,6 @@ module.exports = (grunt) ->
             filter: 'isFile'
           }
           {
-            # Templates
-            expand: true
-            cwd: 'src/templates'
-            src: '**'
-            dest: 'dist/craft/templates'
-          }
-          {
             # Static files
             expand: true
             cwd: 'src/static_files'
@@ -91,6 +84,16 @@ module.exports = (grunt) ->
             dest: 'dist/public'
             dot: true
           }
+        ]
+      craft_install:
+        files: [{
+          expand: true
+          cwd: '.tmp/craft'
+          src: '**'
+          dest: 'dist/'
+        }]
+      craft:
+        files: [
           {
             # Craft config
             expand: true
@@ -98,14 +101,14 @@ module.exports = (grunt) ->
             src: '**'
             dest: 'dist/craft'
           }
+          {
+            # Templates
+            expand: true
+            cwd: 'src/templates'
+            src: '**'
+            dest: 'dist/craft/templates'
+          }
         ]
-      craft:
-        files: [{
-          expand: true
-          cwd: '.tmp/craft'
-          src: '**'
-          dest: 'dist/'
-        }]
     bower_concat:
       all:
         dest: 'dist/public/assets/scripts/vendor.js'
@@ -139,7 +142,7 @@ module.exports = (grunt) ->
       server:
         options:
           port: 9000
-          base: 'dist'
+          base: 'dist/public'
           middleware: (connect, options) ->
             middlewares = []
             # RewriteRules support
@@ -157,13 +160,13 @@ module.exports = (grunt) ->
       options:
         rulesProvider: 'connect.rules'
     twigRender:
-      main:
+      prototypes:
         files: [{
           expand: true,
-          data: 'data/variables/default.json'
+          data: 'data/prototypes.yml'
           cwd: 'src/templates'
           src: ['**/*.html', '!**/_*.html'] # Match twig templates but not partials
-          dest: 'dist'
+          dest: 'dist/public'
           ext: '.html'
           }]
     clean:
@@ -181,7 +184,7 @@ module.exports = (grunt) ->
       ]
 
   grunt.registerTask 'install', ['bower_install']
-  grunt.registerTask 'compile-styles', ['sass', 'bless']
-  grunt.registerTask 'build', ['clean:main', 'copy:main', 'compile-styles', 'bower_concat', 'uglify']
+  grunt.registerTask 'compile_styles', ['sass', 'bless']
+  grunt.registerTask 'build', ['clean:main', 'copy:main', 'compile_styles', 'twigRender:prototypes', 'bower_concat', 'uglify']
   grunt.registerTask 'serve', ['configureRewriteRules', 'connect:server']
-  grunt.registerTask 'default', ['build', 'watch', 'serve']
+  grunt.registerTask 'default', ['build', 'serve', 'watch']

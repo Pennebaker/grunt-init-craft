@@ -43,7 +43,7 @@ module.exports = (grunt) ->
           'src/assets/styles'
           'bower_components/bourbon/app/assets/stylesheets'
           'bower_components/neat/app/assets/stylesheets'
-          'bower_components/normalize.scss'
+          'bower_components/normalize-scss'
         ]
       dist:
         files: [{
@@ -116,7 +116,7 @@ module.exports = (grunt) ->
         exclude: [
           'bourbon'
           'neat'
-          'normalize.scss'
+          'normalize-scss'
         ]
     uglify:
       main:

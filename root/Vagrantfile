@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.hostname = "lamp-craft"
+
+	# Forward ports to Apache and MySQL
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 3306, host: 8484
+  config.vm.network "private_network", ip: "192.168.42.42"
+
+  config.vm.synced_folder "dist/public", "/var/www/html"
+  config.vm.synced_folder "dist/craft", "/var/www/craft"
+
+	config.vm.provision "shell", path: "provision.sh"
+
+  # Fix tty Error
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
+end

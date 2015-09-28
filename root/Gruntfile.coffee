@@ -2,13 +2,11 @@ module.exports = (grunt) ->
 
   # Automatically loads all Grunt tasks
   require('load-grunt-tasks')(grunt)
-  # Used to rewrite the `serve` URLs to drop .html
-  rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest
 
   grunt.initConfig
     curl:
       craft:
-        src: 'http://download.buildwithcraft.com/craft/2.4/2.4.2682/Craft-2.4.2682.zip'
+        src: 'http://download.buildwithcraft.com/craft/2.4/2.4.2691/Craft-2.4.2691.zip'
         dest: '.tmp/craft.zip'
     unzip:
       craft:
@@ -22,8 +20,8 @@ module.exports = (grunt) ->
         files: ['src/assets/**/*.js']
         tasks: ['uglify']
       templates:
-        files: ['src/templates/**/*.html']
-        tasks: ['twigRender:prototypes']
+        files: ['src/templates/**/*.html', 'data/**/*.yml']
+        tasks: ['copy:craft']
       static_files:
         files: ['src/assets/**', 'src/media/**', '!src/assets/**/*.scss', 'src/static_files/**']
         tasks: ['copy:main']
@@ -43,7 +41,9 @@ module.exports = (grunt) ->
           'src/assets/styles'
           'bower_components/bourbon/app/assets/stylesheets'
           'bower_components/neat/app/assets/stylesheets'
+          'bower_components/omega-reset-for-bourbon-neat/dist'
           'bower_components/normalize-scss'
+          'bower_components'
         ]
       dist:
         files: [{
@@ -117,7 +117,12 @@ module.exports = (grunt) ->
           'bourbon'
           'neat'
           'normalize-scss'
+          'omega-reset-for-bourbon-neat'
         ]
+        mainFiles:
+          'dropkick': 'lib/dropkick.js'
+        dependencies:
+          'dropkick': 'jquery'
     uglify:
       main:
         files: [{
@@ -163,7 +168,7 @@ module.exports = (grunt) ->
       prototypes:
         files: [{
           expand: true,
-          data: 'data/prototypes.yml'
+          data: ['data/prototypes.yml', 'data/local.yml']
           cwd: 'src/templates'
           src: ['**/*.html', '!**/_*.html'] # Match twig templates but not partials
           dest: 'dist/public'
@@ -175,6 +180,7 @@ module.exports = (grunt) ->
         'dist/public/assets'
         'dist/public/media'
         'dist/public/index.html' # kill the file added by apache2
+        '.tmp'
       ]
       craftPostInstall: [
         'dist/craft/templates/*'
@@ -183,8 +189,20 @@ module.exports = (grunt) ->
         'dist/readme.txt'
       ]
 
-  grunt.registerTask 'install', ['bower_install']
+  grunt.registerTask 'create_local_yml', 'Creates local.yml', ->
+    local_yml_file = 'data/local.yml'
+    if not grunt.file.exists local_yml_file
+      grunt.file.write 'data/local.yml', ''
+
+  grunt.registerTask 'craft_install', 'Downloads Craft and installs Craft', ->
+    if grunt.file.exists('dist/craft') isnt true
+      grunt.task.run ['curl:craft', 'unzip:craft', 'copy:craft_install', 'clean', 'copy:craft']
+
+
+
+
+  grunt.registerTask 'install', ['bower_install', 'craft_install', 'create_local_yml']
   grunt.registerTask 'compile_styles', ['sass', 'bless']
-  grunt.registerTask 'build', ['clean:main', 'copy:main', 'compile_styles', 'twigRender:prototypes', 'bower_concat', 'uglify']
+  grunt.registerTask 'build', ['install', 'clean:main', 'copy:main', 'copy:craft', 'compile_styles', 'bower_concat', 'uglify']
   grunt.registerTask 'serve', ['configureRewriteRules', 'connect:server']
-  grunt.registerTask 'default', ['build', 'serve', 'watch']
+  grunt.registerTask 'default', ['build', 'watch']

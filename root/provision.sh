@@ -81,6 +81,9 @@ echo "Restarting Services..."
 service apache2 restart > /dev/null
 service mysql restart > /dev/null
 
+# Pull in database into vagrant db
+mysql -u root -pvagrant vagrant < /vagrant/data/cms.sql
+
 # Database auto dump
 echo "alias database_dump='mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/dev.sql'" >> /home/vagrant/.bashrc
 echo 'nohup watch -n5 "mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/dev.sql" > /dev/null 2>&1 &' > /etc/rc.local

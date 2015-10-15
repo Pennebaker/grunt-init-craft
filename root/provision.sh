@@ -85,6 +85,6 @@ service mysql restart > /dev/null
 mysql -u root -pvagrant vagrant < /vagrant/data/cms.sql
 
 # Database auto dump
-echo "alias database_dump='mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/dev.sql'" >> /home/vagrant/.bashrc
-echo 'nohup watch -n5 "mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/dev.sql" > /dev/null 2>&1 &' > /etc/rc.local
+echo "alias database_dump='mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/cms.sql'" >> /home/vagrant/.bashrc
+echo 'nohup watch -n5 "mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/cms.sql" > /dev/null 2>&1 &' > /etc/rc.local
 echo 'exit 0' >> /etc/rc.local

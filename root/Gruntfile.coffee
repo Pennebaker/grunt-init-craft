@@ -77,6 +77,14 @@ module.exports = (grunt) ->
             filter: 'isFile'
           }
           {
+            # Plugins
+            expand: true
+            cwd: 'src/craft_config'
+            src: '**'
+            dest: 'dist/craft'
+            filter: 'isFile'
+          }
+          {
             # Static files
             expand: true
             cwd: 'src/static_files'

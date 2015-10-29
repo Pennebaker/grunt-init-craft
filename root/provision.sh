@@ -56,7 +56,7 @@ mysql -u root -p${mysql_pass} -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDEN
 mysql -u root -p${mysql_pass} -e "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" &> /dev/null
 
 # Restore Database from dump
-mysql -u root -p$mysql_pass $mysql_db < /vagrant/data/dev.sql && echo "Restoring MySQL Database from dump.sql..."
+mysql -u root -p$mysql_pass $mysql_db < /vagrant/data/cms.sql && echo "Restoring MySQL Database from dump.sql..."
 
 # Simplify Apache permissions
 echo "export APACHE_RUN_USER=vagrant" >> /etc/apache2/envvars
@@ -82,6 +82,8 @@ service apache2 restart > /dev/null
 service mysql restart > /dev/null
 
 # Database auto dump
-echo "alias database_dump='mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/dev.sql'" >> /home/vagrant/.bashrc
-echo 'nohup watch -n5 "mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/dev.sql" > /dev/null 2>&1 &' > /etc/rc.local
+echo "alias database_dump='mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/cms.sql'" >> /home/vagrant/.bashrc
+echo 'mysql -u root -pvagrant vagrant < /vagrant/data/cms.sql' > /etc/rc.local
+echo 'sleep 10' >> /etc/rc.local
+echo 'nohup watch -n5 "mysqldump -u root -pvagrant --skip-dump-date vagrant > /vagrant/data/cms.sql" > /dev/null 2>&1 &' >> /etc/rc.local
 echo 'exit 0' >> /etc/rc.local

@@ -6,7 +6,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     curl:
       craft:
-        src: 'http://download.buildwithcraft.com/craft/2.4/2.4.2691/Craft-2.4.2691.zip'
+        src: 'https://download.craftcms.com/craft/2.5/2.5.2760/Craft-2.5.2760.zip'
         dest: '.tmp/craft.zip'
     unzip:
       craft:
@@ -20,7 +20,7 @@ module.exports = (grunt) ->
         files: ['src/assets/**/*.js']
         tasks: ['uglify']
       templates:
-        files: ['src/templates/**/*.html', 'data/**/*.yml']
+        files: ['src/templates/**/*.html', 'src/templates/**/*.twig', 'data/**/*.yml']
         tasks: ['copy:craft']
       static_files:
         files: ['src/assets/**', 'src/media/**', '!src/assets/**/*.scss', 'src/static_files/**']
@@ -178,9 +178,9 @@ module.exports = (grunt) ->
           expand: true,
           data: ['data/prototypes.yml', 'data/local.yml']
           cwd: 'src/templates'
-          src: ['**/*.html', '!**/_*.html'] # Match twig templates but not partials
+          src: ['**/*.html', '**/*.twig', '!**/_*.html', '!**/_*.twig'] # Match twig templates but not partials
           dest: 'dist/public'
-          ext: '.html'
+          ext: ['.html', '.twig']
           }]
     clean:
       main: [

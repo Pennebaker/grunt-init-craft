@@ -36,7 +36,8 @@ apt-get -y install php5 php5-curl php5-mysql php5-sqlite php5-xdebug &> /dev/nul
 sed -i "s/display_startup_errors = Off/display_startup_errors = On/g" ${php_config_file}
 sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
 echo "xdebug.remote_enable=On" >> ${xdebug_config_file}
-echo 'xdebug.remote_connect_back=On' >> ${xdebug_config_file}
+echo "xdebug.remote_connect_back=On" >> ${xdebug_config_file}
+echo "xdebug.max_nesting_level=400" >> ${xdebug_config_file}
 
 # Install MySQL
 echo "mysql-server mysql-server/root_password password ${mysql_pass}" | sudo debconf-set-selections

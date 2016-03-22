@@ -8,5 +8,15 @@
  */
 
 return array(
-	'omitScriptNameInUrls' => true,
+    '*' => array(
+        'omitScriptNameInUrls' => true,
+    ),
+
+    '.dev' => array(
+        'devMode' => true,
+    ),
+
+    'stage.' => array(
+        'cooldownDuration' => 0,
+    )
 );

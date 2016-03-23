@@ -6,7 +6,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     curl:
       craft:
-        src: 'http://craftcms.com/latest.zip?accept_license=yes'
+        src: 'https://download.craftcdn.com/craft/2.6/2.6.2776/Craft-2.6.2776.zip'
         dest: '.tmp/craft.zip'
     unzip:
       craft:

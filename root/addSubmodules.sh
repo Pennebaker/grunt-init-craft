@@ -27,6 +27,9 @@ plugins=(
     ["craft_plugins/Reasons-Craft"]=https://github.com/mmikkel/Reasons-Craft.git
     ["craft_plugins/navee"]=https://github.com/fromtheoutfit/navee.git
     ["craft_plugins/Craft-FocusPoint"]=https://github.com/smcyr/Craft-FocusPoint.git
+    ["craft_plugins/instantanalytics"]=https://github.com/nystudio107/instantanalytics.git
+    ["craft_plugins/minify"]=https://github.com/nystudio107/minify.git
+    ["craft_plugins/cookies"]=https://github.com/nystudio107/cookies.git
 )
 
 for i in "${!plugins[@]}"

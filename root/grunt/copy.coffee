@@ -283,5 +283,29 @@ module.exports = (grunt) ->
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
+        {
+          # Instant Analytics Plugin
+          expand: true
+          cwd: 'craft_plugins/instantanalytics'
+          src: '**'
+          dest: 'dist/craft/plugins/instantanalytics'
+          filter: 'isFile'
+        }
+        {
+          # Minify Plugin
+          expand: true
+          cwd: 'craft_plugins/minify'
+          src: '**'
+          dest: 'dist/craft/plugins/minify'
+          filter: 'isFile'
+        }
+        {
+          # Cookies Plugin
+          expand: true
+          cwd: 'craft_plugins/cookies'
+          src: '**'
+          dest: 'dist/craft/plugins/cookies'
+          filter: 'isFile'
+        }
       ]
   return

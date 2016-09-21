@@ -130,7 +130,9 @@ module.exports = (grunt) ->
           src: '**'
           dest: 'dist/public/docs'
         }
-      craft_plugins:
+      ]
+    craft_plugins:
+      files: [
         {
           # Blueprint Plugin
           expand: true

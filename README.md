@@ -9,8 +9,6 @@ This is a grunt init template for Craft projects. It automates the following:
 * Minifies main.js
 * Compiles a gitbook in `docs/`
 * Watches for changes and recompiles
-* Makes automatic backups of the SQL database to `data/cms.sql`
-* Automatically imports `data/cms.sql` when the Vagrant server starts
 
 Installation
 ------------
@@ -28,4 +26,4 @@ At the command-line, `cd` into an empty directory, run this command and follow t
 
 _Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._
 
-Next run `npm install`. Then run `vagrant up` to start the server, and `grunt` to start the watcher.
+View the [README.md](https://github.com/Pennebaker/grunt-init-craft/blob/master/root/README.md) for further instructions.

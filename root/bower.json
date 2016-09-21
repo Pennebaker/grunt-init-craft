@@ -18,6 +18,23 @@
     "bourbon": "~4.2.4",
     "neat": "~1.7.2",
     "modernizr": "~2.8.3",
-    "normalize-scss": "~3.0.3"
+    "normalize-scss": "~3.0.3",
+    "omega-reset-for-bourbon-neat": "joshfry/omega-reset-for-bourbon-neat",
+    "jquery-ui": "~1.11.4",
+    "dropkick": "~2.1.8",
+    "bitters": "^1.3.1",
+    "matchHeight": "^0.7.0",
+    "slick-carousel": "^1.6.0",
+    "jquery-placeholder": "^2.3.1",
+    "matchMedia": "^0.3.0",
+    "video.js": "^5.10.1",
+    "sticky-kit": "^1.1.2",
+    "waypoints": "^4.0.0",
+    "jquery.scrollTo": "^2.1.2"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4",
+    "neat": "~1.7.2",
+    "bourbon": "~4.2.4"
   }
 }

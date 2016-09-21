@@ -10,13 +10,26 @@
 return array(
     '*' => array(
         'omitScriptNameInUrls' => true,
+        'enableCsrfProtection' => true,
+
+        'environmentVariables' => array(
+            'baseUrl'  => 'http://example.com/',
+        )
+    ),
+
+    'stage.' => array(
+        'environmentVariables' => array(
+            'baseUrl'  => 'http://stage.example.com/',
+        )
     ),
 
     '.dev' => array(
         'devMode' => true,
-    ),
+        'cache' => false,
+        'enableTemplateCaching' => false,
 
-    'stage.' => array(
-        'cooldownDuration' => 0,
-    )
+        'environmentVariables' => array(
+            'baseUrl'  => 'http://example.dev/',
+        )
+    ),
 );

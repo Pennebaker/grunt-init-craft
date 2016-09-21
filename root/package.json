@@ -17,11 +17,14 @@
     "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-criticalcss": "^1.0.3",
     "grunt-curl": "^2.2.0",
+    "grunt-fontello": "github:spanser/grunt-fontello",
+    "grunt-mkdir": "^1.0.0",
     "grunt-sass": "^1.0.0",
     "grunt-twig-render": "^1.7.2",
     "grunt-zip": "^0.17.0",
-    "load-grunt-tasks": "^3.2.0"
+    "load-grunt-tasks": "^3.3.0"
   },
   "scripts": {
     "postinstall": "grunt build"

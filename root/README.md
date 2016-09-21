@@ -12,7 +12,7 @@
 
 1. `npm install`  
 1. `cd dist && valet link example && cd ..`  
-1. `addSubmodules.sh --force` to install submodules if you want to cherry pick remove `--force`  
+1. `addSubmodules.sh --force` to install submodules. If you want to cherry pick specific submodules, run the command without `--force`  
 1. `grunt`  
 1. Import DB via [Dev DB Restore](#dev-db-restore)  
 
@@ -32,14 +32,14 @@
 ### Dev DB Backup
 
 1. `cd data`  
-1. script will need execute permissions `chmod +x ./backup-db.sh`  
+1. Script will need execute permissions `chmod +x ./backup-db.sh`  
 1. `./backup-db.sh`  
 1. Enter your first name  
 
 ### Dev DB Restore
 
 1. `cd data`  
-1. script will need execute permissions `chmod +x ./restore-db.sh`  
+1. Script will need execute permissions `chmod +x ./restore-db.sh`  
 1. `./restore-db.sh`  
 1. Choose a backup to restore.  
 

@@ -7,7 +7,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'craft_install', 'Downloads Craft and installs Craft', ->
     if grunt.file.exists('dist/craft') isnt true
-      grunt.task.run ['curl:craft', 'unzip:craft', 'copy:craft_install', 'clean', 'copy:craft']
+      grunt.task.run ['curl:craft', 'unzip:craft', 'copy:craft_install', 'clean:craftPostInstall', 'copy:craft']
 
   grunt.registerTask 'install', ['bower_install', 'craft_install']
   grunt.registerTask 'craft-update', ['clean:craftPreUpdate', 'install']

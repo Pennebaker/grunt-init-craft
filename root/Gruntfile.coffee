@@ -11,8 +11,6 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'install', ['bower_install', 'craft_install']
   grunt.registerTask 'craft-update', ['clean:craftPreUpdate', 'install']
-  grunt.registerTask 'compile_styles', ['sass', 'bless', 'criticalcss']
-  grunt.registerTask 'compile_styles-dev', ['sass']
-  grunt.registerTask 'build', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'copy:main', 'copy:craft_plugins', 'copy:craft', 'compile_styles', 'bower_concat', 'uglify', 'copy:css']
-  grunt.registerTask 'build-dev', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'copy:main', 'copy:craft_plugins', 'copy:craft', 'compile_styles-dev', 'bower_concat', 'copy:css']
+  grunt.registerTask 'build', ['build-dev', 'uglify', 'criticalcss', 'cssmin']
+  grunt.registerTask 'build-dev', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'regex-replace:fontello', 'copy:main', 'copy:craft_plugins', 'copy:craft', 'sass', 'bower_concat', 'copy:css']
   grunt.registerTask 'default', ['build-dev', 'watch']

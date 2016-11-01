@@ -4,5 +4,6 @@ module.exports = (grunt) ->
       files: [{
         expand: true
         src: 'dist/public/assets/**/*.js'
+        filter: 'isFile'
       }]
   return

@@ -18,6 +18,9 @@ module.exports = (grunt) ->
     bower:
       files: ['bower.json', 'bower_components/*']
       tasks: ['bower_install', 'bower_concat']
+    fontello:
+      files: ['src/fontello/config.json']
+      tasks: ['fontello:dist', 'regex-replace:fontello']
     docs:
       files: ['docs/**']
       tasks: ['gitbook']

@@ -11,9 +11,7 @@ module.exports = (grunt) ->
         sourceMap: false
       files:
         'dist/public/assets/scripts/main.js': 'src/assets/scripts/main.js'
-        'dist/public/assets/scripts/roi.js': 'src/assets/scripts/roi.js'
     dev:
       files:
         'dist/public/assets/scripts/main.js': 'src/assets/scripts/main.js'
-        'dist/public/assets/scripts/roi.js': 'src/assets/scripts/roi.js'
   return

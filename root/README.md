@@ -12,6 +12,7 @@
 
 1. `npm install`  
 1. `cd dist && valet link example && cd ..`  
+1. `brew update && brew install bash` for OSX to upgrade to Bash 4.x  
 1. `addSubmodules.sh --force` to install submodules. If you want to cherry pick specific submodules, run the command without `--force`  
 1. `grunt`  
 1. Import DB via [Dev DB Restore](#dev-db-restore)  

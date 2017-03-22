@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
   grunt.config 'watch',
     static_files:
-      files: ['src/assets/**', 'src/media/**', '!src/assets/**/*.scss', 'src/static_files/**', 'src/plugins/**']
+      files: ['src/assets/**', 'src/media/**', '!src/assets/**/*.scss', '!src/assets/**/*.js', 'src/static_files/**', 'src/plugins/**']
       tasks: ['copy:main', 'copy:css', 'assets_hash']
     styles:
       files: ['src/assets/**/*.scss']

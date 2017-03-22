@@ -1,21 +1,7 @@
 #! /bin/bash
-DB_NAME="PROJECT_cmsdb_dev"
-LATEST="./cms-latest-backup.sql"
+db_name="PROJECT_cmsdb_dev"
+latest="./cms-latest-backup.sql"
 
-# Detect paths
-MYSQL=$(which mysql)
-AWK=$(which awk)
-GREP=$(which grep)
-
-
-# We need to drop all tables incase there are extras tables existing that are not going to be removed by restoring a backup
-TABLES=$($MYSQL -u 'root' $DB_NAME -e 'show tables' | $AWK '{ print $1}' | $GREP -v '^Tables' )
-for t in $TABLES
-do
-	$MYSQL -u 'root' $DB_NAME -e "SET FOREIGN_KEY_CHECKS=0;drop table $t"
-done
-
-# Ask the user which DB they want to restore.
 database_imported="False"
 while [[ ${database_imported} == "False" ]]; do
   files=($(find -E . -type f -regex "^./backup/.*$"))
@@ -25,7 +11,7 @@ while [[ ${database_imported} == "False" ]]; do
     printf "   [%d] %s\n" $i $item
     ((i++))
   done
-  printf " * [%d] %s\n" $i $LATEST
+  printf " * [%d] %s\n" $i $latest
 
   echo "Restore which backup?"
   read Choice
@@ -37,7 +23,7 @@ while [[ ${database_imported} == "False" ]]; do
 
   # if input == length of backup files list they must've picked latest
   if [ "${Choice}" -eq "${#files[@]}" ]; then
-    mysql -uroot $DB_NAME < $LATEST
+    mysql -uroot $db_name < $latest
     database_imported="True"
   # else import the user choice
   else
@@ -45,7 +31,7 @@ while [[ ${database_imported} == "False" ]]; do
     if [ "${Choice}" -gt "${#files[@]}" ]; then
       echo 'Please choose a number from the list.'
     else
-      mysql -uroot $DB_NAME < ${files[$Choice]}
+      mysql -uroot $db_name < ${files[$Choice]}
       database_imported="True"
     fi
   fi

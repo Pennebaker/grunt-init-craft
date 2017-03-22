@@ -1,0 +1,20 @@
+{
+    "plugins": ["fancybox"],
+    "pluginsConfig": {
+        "fancybox": {
+            "helpers": {
+                "buttons": {
+                    "skipSingle": true
+                }
+            }
+        }
+    },
+    "links": {
+        "sharing": {
+            "google": false,
+            "facebook": false,
+            "twitter": false
+        }
+    }
+
+}

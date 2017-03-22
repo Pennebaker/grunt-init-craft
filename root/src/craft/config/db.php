@@ -12,9 +12,9 @@ return array(
 			// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
 			'server' => '127.0.0.1',
 			// The database username to connect with.
-			'user' => 'UPDATEUSERNAME',
+			'user' => 'DB_USERNAME',
 			// The database password to connect with.
-			'password' => 'UPDATEPASSWORD',
+			'password' => 'DB_PASSWORD',
 			// The name of the database to select.
 			'database' => 'PROJECT_cmsdb_prod',
 			// The prefix to use when naming tables. This can be no more than 5 characters.
@@ -24,11 +24,23 @@ return array(
 			// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
 			'server' => '127.0.0.1',
 			// The database username to connect with.
-			'user' => 'UPDATEUSERNAME',
+			'user' => 'DB_USERNAME',
 			// The database password to connect with.
-			'password' => 'UPDATEPASSWORD',
+			'password' => 'DB_PASSWORD',
 			// The name of the database to select.
 			'database' => 'PROJECT_cmsdb_stage',
+			// The prefix to use when naming tables. This can be no more than 5 characters.
+			'tablePrefix' => 'craft',
+    ),
+    'stage.' => array(
+			// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
+			'server' => '127.0.0.1',
+			// The database username to connect with.
+			'user' => 'DB_USERNAME',
+			// The database password to connect with.
+			'password' => 'DB_PASSWORD',
+			// The name of the database to select.
+			'database' => 'PROJECT_cmsdb_dev',
 			// The prefix to use when naming tables. This can be no more than 5 characters.
 			'tablePrefix' => 'craft',
     ),

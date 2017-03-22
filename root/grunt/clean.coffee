@@ -12,7 +12,4 @@ module.exports = (grunt) ->
       'dist/public/robots.txt'
       'dist/readme.txt'
     ]
-    craftPreUpdate: [
-      'dist/craft'
-    ]
   return

@@ -8,6 +8,7 @@ module.exports = (grunt) ->
         'bower_components/neat/app/assets/stylesheets'
         'bower_components/omega-reset-for-bourbon-neat/dist'
         'bower_components/normalize-scss'
+        'bower_components/sass-web-fonts'
         'bower_components'
       ]
     dist:

@@ -11,15 +11,28 @@ return array(
     '*' => array(
         'omitScriptNameInUrls' => true,
         'enableCsrfProtection' => true,
+        'maxUploadFileSize' => '120000000',
 
         'environmentVariables' => array(
             'baseUrl'  => 'http://example.com/',
+            'enableBugHerd' => false,
         )
     ),
 
     'stage.' => array(
         'environmentVariables' => array(
             'baseUrl'  => 'http://stage.example.com/',
+            'enableBugHerd' => true,
+        )
+    ),
+
+    'dev.' => array(
+        'cache' => false,
+        'enableTemplateCaching' => false,
+
+        'environmentVariables' => array(
+            'baseUrl'  => 'http://dev.example.com/',
+            'enableBugHerd' => true,
         )
     ),
 
@@ -30,6 +43,7 @@ return array(
 
         'environmentVariables' => array(
             'baseUrl'  => 'http://example.dev/',
+            'enableBugHerd' => true,
         )
     ),
 );

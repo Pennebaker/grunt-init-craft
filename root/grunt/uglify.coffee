@@ -3,7 +3,10 @@ module.exports = (grunt) ->
     main:
       files: [{
         expand: true
-        src: 'dist/public/assets/**/*.js'
+        src: [
+            'dist/public/assets/**/*.js'
+            '!dist/public/assets/**/vue*'
+        ]
         filter: 'isFile'
       }]
   return

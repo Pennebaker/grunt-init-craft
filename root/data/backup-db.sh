@@ -1,9 +1,4 @@
-#! /bin/bash
-DB_NAME="PROJECT_cmsdb_dev"
 PREFIX=`date +%Y%m%d-%H%M-`
-
-# Detect paths
-MYSQLDUMP=$(which mysqldump)
 
 FILE="cms.sql"
 LATEST="cms-latest-backup.sql"
@@ -14,6 +9,6 @@ read NAME
 NAME=`echo $NAME | tr "[:upper:]" "[:lower:]"`
 
 rm $LATEST
-$MYSQLDUMP -uroot $DB_NAME >> $LATEST
-mkdir -p backup
+mysqldump -uroot PROJECT_cmsdb_dev >> $LATEST
+mkdir backup
 cp $LATEST backup/$PREFIX$NAME-$FILE

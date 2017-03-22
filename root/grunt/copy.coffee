@@ -12,9 +12,16 @@ module.exports = (grunt) ->
         {
           # Craft config
           expand: true
-          cwd: 'src/craft_config'
+          cwd: 'src/craft'
           src: '**'
           dest: 'dist/craft'
+        }
+        {
+          # Craft locales
+          expand: true
+          cwd: 'src/craft_locale'
+          src: '**'
+          dest: 'dist/craft/app/framework/i18n/data'
         }
         {
           # Templates
@@ -34,12 +41,172 @@ module.exports = (grunt) ->
             filter: 'isFile'
           }
       ]
+    vendor:
+      files: [
+        {
+          expand: true
+          cwd: 'bower_components/video.js/dist'
+          src: '**'
+          dest: 'dist/public/assets/vendor/video-js'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/slick-carousel/slick'
+          src: '**'
+          dest: 'dist/public/assets/vendor/slick-carousel'
+          filter: 'isFile'
+        }
+      ]
+    loadjs:
+      files: [
+        {
+          expand: true
+          cwd: 'bower_components/modernizr'
+          src: 'modernizr.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/matchMedia'
+          src: 'matchMedia.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/video.js/dist'
+          src: 'video.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/jquery/dist'
+          src: 'jquery.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/matchHeight'
+          src: 'jquery.matchHeight.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/jquery-placeholder'
+          src: 'jquery.placeholder.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/sticky-kit/dist'
+          src: 'sticky-kit.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/jquery.scrollTo'
+          src: 'jquery.scrollTo.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/waypoints/lib'
+          src: 'noframework.waypoints.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/slick-carousel/slick'
+          src: 'slick.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/flexibility'
+          src: 'flexibility.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/lazysizes'
+          src: 'lazysizes.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/lazysizes/plugins/bgset'
+          src: 'ls.bgset.js'
+          dest: 'dist/public/assets/scripts/lazysizes-plugins'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/dropkick/build/js'
+          src: 'dropkick.min.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/es6-object-assign/dist'
+          src: 'object-assign.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/vue/dist'
+          src: 'vue.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/vue/dist'
+          src: 'vue.min.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+      ]
     main:
       files: [
         {
           expand: true
+          cwd: 'bower_components/loadjs/dist'
+          src: 'loadjs.min.js'
+          dest: 'dist/craft/templates/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
           cwd: 'bower_components/loadcss/src'
           src: '*.js'
+          dest: 'dist/craft/templates/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/cookie'
+          src: 'cookie.js'
+          dest: 'dist/craft/templates/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/fontfaceobserver'
+          src: 'fontfaceobserver.js'
           dest: 'dist/craft/templates/scripts'
           filter: 'isFile'
         }
@@ -52,19 +219,11 @@ module.exports = (grunt) ->
           filter: 'isFile'
         }
         {
-          # Ionicon Fonts
+          # Copy favicon.ico to public root
           expand: true
-          cwd: 'bower_components/Ionicons'
-          src: 'fonts/**'
-          dest: 'dist/public/assets'
-          filter: 'isFile'
-        }
-        {
-          # Font Awesome Fonts
-          expand: true
-          cwd: 'bower_components/font-awesome'
-          src: 'fonts/**'
-          dest: 'dist/public/assets'
+          cwd: 'src/assets/images/icons'
+          src: ['favicon.ico']
+          dest: 'dist/public'
           filter: 'isFile'
         }
         {
@@ -104,13 +263,13 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'content-models/models'
           src: '**'
-          dest: 'dist/craft/plugins/thearchitect/content'
+          dest: 'dist/craft/config/thearchitect'
           filter: 'isFile'
         }
         {
           # Plugins { Old Method }
           expand: true
-          cwd: 'src/craft_config'
+          cwd: 'src/craft'
           src: '**'
           dest: 'dist/craft'
           filter: 'isFile'
@@ -129,6 +288,13 @@ module.exports = (grunt) ->
           cwd: 'docs/_book'
           src: '**'
           dest: 'dist/public/docs'
+        }
+        {
+          # beam.json
+          expand: true
+          cwd: 'src'
+          src: 'beam.json'
+          dest: 'dist'
         }
       ]
     craft_plugins:
@@ -186,6 +352,14 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'craft_plugins'
           src: 'seomatic/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # InstantAnalytics Plugin
+          expand: true
+          cwd: 'craft_plugins'
+          src: 'instantanalytics/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
@@ -307,6 +481,22 @@ module.exports = (grunt) ->
           cwd: 'craft_plugins/cookies'
           src: '**'
           dest: 'dist/craft/plugins/cookies'
+          filter: 'isFile'
+        }
+        {
+          # SimpleMap Plugin
+          expand: true
+          cwd: 'craft_plugins/SimpleMap'
+          src: '**'
+          dest: 'dist/craft/plugins/simplemap'
+          filter: 'isFile'
+        }
+        {
+          # Typogrify Plugin
+          expand: true
+          cwd: 'craft_plugins/craft-typogrify'
+          src: 'typogrify/**'
+          dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
       ]

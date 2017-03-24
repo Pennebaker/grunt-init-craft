@@ -36,28 +36,28 @@ let hasClass = (className, el) => {
 }
 
 let throttle = (delay, callback) => {
-    var previousCall = new Date().getTime()
-    return function() {
-        var time = new Date().getTime()
-        if ((time - previousCall) >= delay) {
-            previousCall = time
-            callback.apply(null, arguments)
-        }
+  var previousCall = new Date().getTime()
+  return function() {
+    var time = new Date().getTime()
+    if ((time - previousCall) >= delay) {
+      previousCall = time
+      callback.apply(null, arguments)
     }
+  }
 }
 
 let debounce = (delay, callback) => {
-    var timeout = null
-    return function() {
-        if (timeout) {
-            clearTimeout(timeout);
-        }
-        var args = arguments
-        timeout = setTimeout(() => {
-            callback.apply(null, args)
-            timeout = null
-        }, delay)
+  var timeout = null
+  return function() {
+    if (timeout) {
+      clearTimeout(timeout);
     }
+    var args = arguments
+    timeout = setTimeout(() => {
+      callback.apply(null, args)
+      timeout = null
+    }, delay)
+  }
 }
 
 let ready = fn => {

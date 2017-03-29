@@ -54,7 +54,8 @@ valet uninstall
 
 Next, you should upgrade to the latest version of Valet. Depending on how you installed Valet, this is typically done through Git or Composer. If you installed Valet via Composer, you should use the following command to update to the latest major version:
 
-composer global require laravel/valet
+`composer global require laravel/valet`
+
 Once the fresh Valet source code has been downloaded, you should run the install command:
 
 ```bash

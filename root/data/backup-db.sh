@@ -1,3 +1,4 @@
+#! /bin/bash
 PREFIX=`date +%Y%m%d-%H%M-`
 
 FILE="cms.sql"

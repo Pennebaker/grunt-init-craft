@@ -19,6 +19,7 @@ module.exports = (grunt) ->
       grunt.task.run ['craft_install']
 
   grunt.registerTask 'install', ['bower_install', 'update_craft']
-  grunt.registerTask 'build', ['build-dev', 'babel:dist', 'uglify', 'cssmin', 'assets_hash']
-  grunt.registerTask 'build-dev', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'regex-replace:fontello',  'copy:main', 'babel:dev', 'copy:loadjs', 'copy:vendor', 'copy:craft_plugins', 'copy:craft', 'csscomb', 'sass', 'csscount', 'copy:css']
-  grunt.registerTask 'default', ['build-dev', 'assets_hash', 'watch']
+  grunt.registerTask 'build-base', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'regex-replace:fontello',  'copy:main', 'copy:loadjs', 'copy:vendor', 'copy:craft_plugins', 'copy:craft', 'csscomb', 'sass', 'csscount', 'copy:css']
+  grunt.registerTask 'build', ['build-base', 'babel:dist', 'uglify', 'cssmin', 'assets_hash']
+  grunt.registerTask 'build-dev', ['build-base', 'babel:dev', 'assets_hash']
+  grunt.registerTask 'default', ['build-dev', 'watch']

@@ -14,14 +14,14 @@ return array(
         'maxUploadFileSize' => '120000000',
 
         'environmentVariables' => array(
-            'baseUrl'  => 'http://example.com/',
+            'baseUrl'  => 'http://{%= domain_name %}.{%= domain_tld %}/',
             'enableBugHerd' => false,
         )
     ),
 
     'stage.' => array(
         'environmentVariables' => array(
-            'baseUrl'  => 'http://stage.example.com/',
+            'baseUrl'  => 'http://stage.{%= domain_name %}.{%= domain_tld %}/',
             'enableBugHerd' => true,
         )
     ),
@@ -31,7 +31,7 @@ return array(
         'enableTemplateCaching' => false,
 
         'environmentVariables' => array(
-            'baseUrl'  => 'http://dev.example.com/',
+            'baseUrl'  => 'http://dev.{%= domain_name %}.{%= domain_tld %}/',
             'enableBugHerd' => true,
         )
     ),
@@ -42,7 +42,7 @@ return array(
         'enableTemplateCaching' => false,
 
         'environmentVariables' => array(
-            'baseUrl'  => 'http://example.dev/',
+            'baseUrl'  => 'http://{%= domain_name %}.dev/',
             'enableBugHerd' => true,
         )
     ),

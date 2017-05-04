@@ -13,6 +13,6 @@ return array(
     ),
     '.dev' => array(
         'cacheEnabled' => false,
-        'imagerSystemPath' => $_SERVER['HOME'] . '/.valet/Sites/example/public/imager', // This is needed since valet doesn't report set the $_SERVER['DOCUMENT_ROOT'] properly
+        'imagerSystemPath' => $_SERVER['HOME'] . '/.valet/Sites/{%= domain_name %}/public/imager', // This is needed since valet doesn't report set the $_SERVER['DOCUMENT_ROOT'] properly
     )
 );

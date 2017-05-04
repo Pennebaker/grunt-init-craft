@@ -11,7 +11,7 @@
 ### In terminal run:
 
 1. `npm install`  
-1. `cd dist && valet link example && cd ..`  
+1. `cd dist && valet link {%= domain_name %} && cd ..`  
 1. `brew update && brew install bash` for OSX to upgrade to Bash 4.x  
 1. `addSubmodules.sh --force` to install submodules. If you want to cherry pick specific submodules, run the command without `--force`  
 1. `grunt`  
@@ -27,7 +27,7 @@
 * MySQL Host: `127.0.0.1`  
 * Username: `root`  
 * Password: *None*  
-* Database: `PROJECT_cmsdb_dev`  
+* Database: `{%= domain_name %}_cmsdb_dev`  
 * Port: (default)  
 
 ### Dev DB Backup
@@ -81,13 +81,8 @@ If the plugin does not have a public repository. You can just copy the plugin fo
 
 This will rsync down the media files from the server. It will most likely ask for a password when run.
 
-##### From Prod
-1. script will need execute permissions `chmod +x ./rsync_media_prod.sh`  
-1. `./rsync_media_prod.sh`  
-
-##### From Stage
-1. script will need execute permissions `chmod +x ./rsync_media_stage.sh`  
-1. `./rsync_media_stage.sh`  
+1. script will need execute permissions `chmod +x ./rsync.sh`  
+1. `./rsync.sh`  
 
 ### Upgrading Craft CMS to the latest version
 * Update the version in `grunt/curl.coffee`.  

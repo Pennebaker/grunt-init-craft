@@ -21,7 +21,10 @@ exports.template = function(grunt, init, done) {
     // Prompt for these values.
     init.prompt('name'),
 		init.prompt('author_name'),
-		init.prompt('author_email')
+		init.prompt('author_email'),
+		init.prompt('domain_name'),
+		init.prompt('domain_tld'),
+		init.prompt('server_user')
   ], function(err, props) {
     // Files to copy (and process).
     var files = init.filesToCopy(props);

@@ -1,5 +1,5 @@
 #! /bin/bash
-db_name="PROJECT_cmsdb_dev"
+db_name="{%= domain_name %}_cmsdb_dev"
 latest="./cms-latest-backup.sql"
 
 database_imported="False"

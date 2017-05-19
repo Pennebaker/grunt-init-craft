@@ -10,6 +10,6 @@ read NAME
 NAME=`echo $NAME | tr "[:upper:]" "[:lower:]"`
 
 rm $LATEST
-mysqldump -uroot PROJECT_cmsdb_dev >> $LATEST
+mysqldump -uroot {%= domain_name %}_cmsdb_dev >> $LATEST
 mkdir backup
 cp $LATEST backup/$PREFIX$NAME-$FILE

@@ -1,0 +1,25 @@
+tabLength: 4
+extensionConfig:
+  coffee:
+    tabLength: 2
+  cson:
+    tabLength: 2
+  es6:
+    tabLength: 2
+  js:
+    tabLength: 2
+  json:
+    tabLength: 2
+  sh:
+    tabLength: 2
+grammarConfig:
+  Babel:
+    tabLength: 2
+  CoffeeScript:
+    tabLength: 2
+  JSON:
+    tabLength: 2
+  JSX:
+    tabLength: 2
+  Javascript:
+    tabLength: 2

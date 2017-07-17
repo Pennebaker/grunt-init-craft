@@ -7,7 +7,7 @@ module.exports = (grunt) ->
       files: ['src/assets/**/*.scss']
       tasks: ['csscomb', 'sass', 'csscount', 'assets_hash']
     scripts:
-      files: ['src/assets/**/*.js']
+      files: ['src/assets/**/*.js', 'src/assets/**/*.es6']
       tasks: ['babel:dev', 'assets_hash']
     templates:
       files: ['src/craft/**/*', 'src/templates/**/*.html', 'src/templates/**/*.twig', 'src/templates/**/*.js', ]

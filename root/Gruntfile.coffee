@@ -2,7 +2,7 @@ module.exports = (grunt) ->
 
   global['craftMajor'] = 2
   global['craftMinor'] = 6
-  global['craftBuild'] = 2958
+  global['craftBuild'] = 2986
 
   # Automatically loads all Grunt tasks
   require('load-grunt-tasks')(grunt)
@@ -19,7 +19,7 @@ module.exports = (grunt) ->
       grunt.task.run ['craft_install']
 
   grunt.registerTask 'install', ['bower_install', 'update_craft']
-  grunt.registerTask 'build-base', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'regex-replace:fontello',  'copy:main', 'copy:loadjs', 'copy:vendor', 'copy:craft_plugins', 'copy:craft', 'csscomb', 'sass', 'csscount', 'copy:css']
-  grunt.registerTask 'build', ['build-base', 'babel:dist', 'uglify', 'cssmin', 'assets_hash']
-  grunt.registerTask 'build-dev', ['build-base', 'babel:dev', 'assets_hash']
+  grunt.registerTask 'build-base', ['install', 'clean:main', 'mkdir', 'fontello:dist', 'regex-replace:fontello',  'copy:main', 'copy:loadjs', 'copy:vendor', 'copy:craft_plugins', 'copy:craft', 'csscomb', 'sass', 'copy:css']
+  grunt.registerTask 'build', ['build-base', 'postcss:dist', 'babel:dist', 'uglify', 'cssmin', 'csscount', 'assets_hash']
+  grunt.registerTask 'build-dev', ['build-base', 'postcss:dev', 'babel:dev', 'csscount', 'assets_hash']
   grunt.registerTask 'default', ['build-dev', 'watch']

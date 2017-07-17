@@ -11,7 +11,7 @@ module.exports = (grunt) ->
         }
         {
           name: 'scss-varaibles'
-          search: /^\.([a-z\-]+):before { content(: '\\[a-z0-9]+';) }(.*)$/gmi
+          search: /^\.([a-z0-9\-]+):before { content(: '\\[a-z0-9]+';) }(.*)$/gmi
           replace: (fullstring, codeName, code, comment) -> '$' + codeName + code + comment
         }
       ]

@@ -31,6 +31,10 @@ while [[ ${database_imported} == "False" ]]; do
     if [ "${Choice}" -gt "${#files[@]}" ]; then
       echo 'Please choose a number from the list.'
     else
+      db_exists=`mysql -u root --skip-column-names -e "show databases like '$db_name'"`
+      if [ "$db_exists" != "$db_name" ]; then
+        mysql -u root -e "create database $db_name character set UTF8 collate utf8_bin"
+      fi
       mysql -uroot $db_name < ${files[$Choice]}
       database_imported="True"
     fi

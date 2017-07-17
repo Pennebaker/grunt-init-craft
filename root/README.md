@@ -1,6 +1,6 @@
 # {%= name %}
 ---
-### Currently running craft version 2.6 (2931)
+### Currently running craft version 2.6 (2986)
 
 ### Prerequisites:
 

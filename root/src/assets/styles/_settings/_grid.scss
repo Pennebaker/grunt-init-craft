@@ -1,0 +1,13 @@
+$max-width: 1280px;
+
+$gutter-size: 30px;
+
+$neat-grid: (
+  columns: 12,
+  gutter: $gutter-size,
+);
+
+$neat-grid-bleed: (
+  columns: 12,
+  gutter: 1px - 1,
+);// Odd hack to make 0px since csscomb removes px from 0 values. However the px value is required for calc to work

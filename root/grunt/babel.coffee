@@ -9,9 +9,19 @@ module.exports = (grunt) ->
     dist:
       options:
         sourceMap: false
-      files:
-        'dist/public/assets/scripts/main.js': 'src/assets/scripts/main.js'
+      files: [
+        expand: true
+        cwd: 'src/assets/scripts'
+        src: ['*.es6']
+        dest: 'dist/public/assets/scripts/'
+        ext: '.js'
+      ]
     dev:
-      files:
-        'dist/public/assets/scripts/main.js': 'src/assets/scripts/main.js'
+      files: [
+        expand: true
+        cwd: 'src/assets/scripts'
+        src: ['*.es6']
+        dest: 'dist/public/assets/scripts/'
+        ext: '.js'
+      ]
   return

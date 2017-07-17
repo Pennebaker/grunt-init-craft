@@ -1,0 +1,86 @@
+/*
+ * Columnizer
+ */
+
+@mixin columnizer($column-sizes: null, $column-pushes: null, $column-shifts: null, $vertical-gutter: null, $set-neat-grid: null, $set-max-width: null, $visual: null)
+{
+    $column-count: 0;
+    @if $column-sizes
+    {
+        $column-count: length($column-sizes);
+    }
+    @else if $column-shifts
+    {
+        $column-count: length($column-shifts);
+    }
+    $old-neat-grid: $neat-grid;
+    $old-max-width: $max-width;
+    @if $set-neat-grid
+    {
+        $neat-grid: $set-neat-grid !global;
+    }
+    @if $set-max-width != null
+    {
+        $max-width: $set-max-width !global;
+    }
+    @include grid-container;
+    @if $visual
+    {
+        @include grid-visual;
+    }
+    @include margin(null auto);
+    @if $column-sizes
+    {
+        @if $max-width
+        {
+            max-width: $max-width;
+        }
+        box-sizing: border-box;
+    }
+    @if $vertical-gutter
+    {
+        margin-bottom: -$vertical-gutter;
+    }
+    > *:not(style):not(script)
+    {
+        @for $i from 1 through $column-count
+        {
+            &:nth-child(#{$column-count}n+#{$i})
+            {
+                @if $column-sizes
+                {
+                    $column-size: nth($column-sizes, $i);
+                    @include grid-column($column-size);
+                }
+                @if $vertical-gutter
+                {
+                    margin-bottom: $vertical-gutter;
+                }
+                @if $column-pushes
+                {
+                    $column-shift: nth($column-pushes, $i);
+                        @include grid-push($column-shift);
+                }
+                @if $column-shifts
+                {
+                    $column-shift: nth($column-shifts, $i);
+                        @include grid-shift($column-shift);
+                }
+            }
+        }
+        @if $column-sizes
+        {
+            box-sizing: border-box;
+            &:not(:nth-child(#{$column-count}n+1))
+            {
+                clear: none;
+            }
+            &:nth-child(#{$column-count}n+1)
+            {
+                clear: both;
+            }
+        }
+    }
+    $neat-grid: $old-neat-grid !global;
+    $max-width: $old-max-width !global;
+}

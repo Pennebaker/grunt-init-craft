@@ -1,0 +1,9 @@
+html
+{
+    //browser font size hack for accessibility to make rem multiple of 10's eg. 1rem = 10px
+    font-size: 62.5%;
+
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}

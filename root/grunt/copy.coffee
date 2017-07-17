@@ -30,6 +30,22 @@ module.exports = (grunt) ->
           src: '**'
           dest: 'dist/craft/templates'
         }
+        {
+          # Redactor Configs
+          expand: true
+          cwd: 'content-models/redactor/configs'
+          src: '**'
+          dest: 'dist/craft/config/redactor'
+          filter: 'isFile'
+        }
+        {
+          # Generator Content Models
+          expand: true
+          cwd: 'content-models/models'
+          src: '**'
+          dest: 'dist/craft/config/thearchitect'
+          filter: 'isFile'
+        }
       ]
     css:
       files: [
@@ -125,6 +141,13 @@ module.exports = (grunt) ->
         }
         {
           expand: true
+          cwd: 'bower_components/waypoints/lib/shortcuts'
+          src: 'inview.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
           cwd: 'bower_components/slick-carousel/slick'
           src: 'slick.js'
           dest: 'dist/public/assets/scripts'
@@ -214,7 +237,7 @@ module.exports = (grunt) ->
           # Assets, except .scss files
           expand: true
           cwd: 'src/assets'
-          src: ['**', '!**/*.scss']
+          src: ['**', '!**/*.scss', '!**/*.es6']
           dest: 'dist/public/assets'
           filter: 'isFile'
         }
@@ -487,8 +510,8 @@ module.exports = (grunt) ->
           # SimpleMap Plugin
           expand: true
           cwd: 'craft_plugins/SimpleMap'
-          src: '**'
-          dest: 'dist/craft/plugins/simplemap'
+          src: 'simplemap/**'
+          dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
@@ -496,6 +519,22 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'craft_plugins/craft-typogrify'
           src: 'typogrify/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Import Plugin
+          expand: true
+          cwd: 'craft_plugins/import'
+          src: '**'
+          dest: 'dist/craft/plugins/import'
+          filter: 'isFile'
+        }
+        {
+          # No-Cache Plugin
+          expand: true
+          cwd: 'craft_plugins/craft-nocache'
+          src: 'nocache/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }

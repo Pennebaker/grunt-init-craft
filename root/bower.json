@@ -15,8 +15,8 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "bourbon": "~4.2.4",
-    "neat": "~1.7.2",
+    "bourbon": "~4.3.3",
+    "neat": "~2.1.0",
     "modernizr": "~2.8.3",
     "normalize-scss": "~3.0.3",
     "omega-reset-for-bourbon-neat": "joshfry/omega-reset-for-bourbon-neat",
@@ -50,7 +50,7 @@
   },
   "resolutions": {
     "jquery": "~2.1.4",
-    "neat": "~1.7.2",
-    "bourbon": "~4.2.4"
+    "neat": "~2.1.0",
+    "bourbon": "~4.3.3"
   }
 }

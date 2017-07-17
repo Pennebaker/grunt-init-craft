@@ -1,0 +1,27 @@
+{
+    "name": "pennebaker/strathmoreproducts.com",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Pennebaker",
+            "email": "design@pennebaker.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type":"package",
+            "package": {
+              "name": "nystudio107/cookies",
+              "version":"1.0.4",
+              "source": {
+                  "url": "https://github.com/nystudio107/cookies.git",
+                  "type": "git",
+                  "reference":"1.0.4"
+                }
+            }
+        }
+    ],
+    "require": {
+        "nystudio107/cookies": "1.0.4"
+    }
+}

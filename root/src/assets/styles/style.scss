@@ -6,13 +6,17 @@
 @import 'bourbon';
 @import 'web-fonts';
 
+// Mixins
+@import '_mixins/mixins';
+
 // Settings
+@import '_settings/grid';
 
 // Vendor Libraries
 @import 'neat';
-@import 'omega-reset';
-
-// Settings Variables
 
 // Fontello
 @import '../../fontello/scss/_fontello.scss';
+
+// Global Styles
+@import 'global/basic';

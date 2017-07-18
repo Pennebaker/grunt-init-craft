@@ -1,6 +1,6 @@
 # {%= name %}
 ---
-### Currently running craft version 2.6 (2986)
+### Currently running craft version 2.6 (2987)
 
 ### Prerequisites:
 
@@ -13,7 +13,7 @@
 1. `npm install`  
 1. `cd dist && valet link {%= domain_name %} && cd ..`  
 1. `brew update && brew install bash` for OSX to upgrade to Bash 4.x  
-1. `addSubmodules.sh --force` to install submodules. If you want to cherry pick specific submodules, run the command without `--force`  
+1. `composer update`  
 1. `grunt`  
 1. Import DB via [Dev DB Restore](#dev-db-restore)  
 

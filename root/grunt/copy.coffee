@@ -323,50 +323,42 @@ module.exports = (grunt) ->
     craft_plugins:
       files: [
         {
-          # Blueprint Plugin
-          expand: true
-          cwd: 'craft_plugins/craftcms-blueprint'
-          src: '**'
-          dest: 'dist/craft/plugins/blueprint'
-          filter: 'isFile'
-        }
-        {
           # The Architect Plugin
           expand: true
-          cwd: 'craft_plugins/craftcms-thearchitect'
+          cwd: 'craft/plugins/craftcms-thearchitect'
           src: 'thearchitect/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
-          # CPFieldLinks Plugin
+          # Cookies Plugin
           expand: true
-          cwd: 'craft_plugins/CpFieldLinks-Craft'
-          src: 'cpfieldlinks/**'
+          cwd: 'vendor/nystudio107/cookies'
+          src: '**'
+          dest: 'dist/craft/plugins/cookies'
+          filter: 'isFile'
+        }
+        {
+          # InstantAnalytics Plugin
+          expand: true
+          cwd: 'craft_plugins'
+          src: 'instantanalytics/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
-          # Neo Plugin
+          # Minify Plugin
           expand: true
-          cwd: 'craft_plugins/craft-neo'
-          src: 'neo/**'
+          cwd: 'craft/plugins'
+          src: 'minify/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
-          # Super Table Plugin
+          # Minify Plugin
           expand: true
-          cwd: 'craft_plugins/SuperTable'
-          src: 'supertable/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Fruit LinkIt
-          expand: true
-          cwd: 'craft_plugins/LinkIt'
-          src: 'fruitlinkit/**'
+          cwd: 'craft/plugins'
+          src: 'richvaraibles/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
@@ -379,42 +371,139 @@ module.exports = (grunt) ->
           filter: 'isFile'
         }
         {
-          # InstantAnalytics Plugin
+          # Transcoder Plugin
           expand: true
           cwd: 'craft_plugins'
-          src: 'instantanalytics/**'
+          src: 'transcoder/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Contact Form Plugin
+          expand: true
+          cwd: 'vendor/craftcms/contact-form'
+          src: 'contactform/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # CPFieldLinks Plugin
+          expand: true
+          cwd: 'vendor/mmikkel/CpFieldLinks-Craft'
+          src: 'cpfieldlinks/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Reasons Plugin
+          expand: true
+          cwd: 'vendor/mmikkel/Reasons-Craft'
+          src: 'reasons/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # FocusPoint Plugin
+          expand: true
+          cwd: 'vendor/smcyr/Craft-FocusPoint'
+          src: 'focuspoint/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Neo Plugin
+          expand: true
+          cwd: 'vendor/benjamminf/craft-neo'
+          src: 'neo/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Quick Field Plugin
+          expand: true
+          cwd: 'vendor/benjamminf/craft-quick-field'
+          src: 'quickfield/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Relabel Plugin
+          expand: true
+          cwd: 'vendor/benjamminf/craft-relabel'
+          src: 'relabel/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # No-Cache Plugin
+          expand: true
+          cwd: 'vendor/benjamminf/craft-nocache'
+          src: 'nocache/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Safe Delete Plugin
+          expand: true
+          cwd: 'vendor/christianruhstaller/craft-safedelete'
+          src: 'safedelete/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Typogrify Plugin
+          expand: true
+          cwd: 'vendor/jamiepittock/craft-typogrify'
+          src: 'typogrify/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
           # Field Notes Plugin
           expand: true
-          cwd: 'craft_plugins/CraftFieldNotes'
+          cwd: 'vendor/michaelrog/craftfieldnotes'
           src: 'fieldnotes/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Imager Plugin
-          expand: true
-          cwd: 'craft_plugins/Imager-Craft'
-          src: 'imager/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Control Panel CSS Plugin
-          expand: true
-          cwd: 'craft_plugins/craft-cpcss'
-          src: 'cpcss/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
           # Expanded Singles Plugin
           expand: true
-          cwd: 'craft_plugins/ExpandedSingles'
+          cwd: 'vendor/engram-design/ExpandedSingles'
           src: 'expandedsingles/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Imager Plugin
+          expand: true
+          cwd: 'vendor/aelvan/Imager-Craft'
+          src: 'imager/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Fruit LinkIt
+          expand: true
+          cwd: 'vendor/fruitstudios/LinkIt'
+          src: 'fruitlinkit/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Navee Plugin
+          expand: true
+          cwd: 'fromtheoutfit'
+          src: 'navee/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+====================================
+        {
+          # Super Table Plugin
+          expand: true
+          cwd: 'craft_plugins/SuperTable'
+          src: 'supertable/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
@@ -427,83 +516,11 @@ module.exports = (grunt) ->
           filter: 'isFile'
         }
         {
-          # Contact Form Plugin
-          expand: true
-          cwd: 'craft_plugins/ContactForm'
-          src: 'contactform/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
           # Sitemap Plugin
           expand: true
           cwd: 'craft_plugins/craft-sitemap'
           src: 'sitemap/**'
           dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Cache Clear Plugin
-          expand: true
-          cwd: 'craft_plugins/craft.cache-clear'
-          src: '**'
-          dest: 'dist/craft/plugins/cacheclear'
-          filter: 'isFile'
-        }
-        {
-          # Relabel Plugin
-          expand: true
-          cwd: 'craft_plugins/craft-relabel'
-          src: 'relabel/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Reasons Plugin
-          expand: true
-          cwd: 'craft_plugins/Reasons-Craft'
-          src: 'reasons/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Navee Plugin
-          expand: true
-          cwd: 'craft_plugins/navee'
-          src: '**'
-          dest: 'dist/craft/plugins/navee'
-          filter: 'isFile'
-        }
-        {
-          # FocusPoint Plugin
-          expand: true
-          cwd: 'craft_plugins/Craft-FocusPoint'
-          src: 'focuspoint/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Instant Analytics Plugin
-          expand: true
-          cwd: 'craft_plugins/instantanalytics'
-          src: '**'
-          dest: 'dist/craft/plugins/instantanalytics'
-          filter: 'isFile'
-        }
-        {
-          # Minify Plugin
-          expand: true
-          cwd: 'craft_plugins/minify'
-          src: '**'
-          dest: 'dist/craft/plugins/minify'
-          filter: 'isFile'
-        }
-        {
-          # Cookies Plugin
-          expand: true
-          cwd: 'craft_plugins/cookies'
-          src: '**'
-          dest: 'dist/craft/plugins/cookies'
           filter: 'isFile'
         }
         {
@@ -515,27 +532,11 @@ module.exports = (grunt) ->
           filter: 'isFile'
         }
         {
-          # Typogrify Plugin
-          expand: true
-          cwd: 'craft_plugins/craft-typogrify'
-          src: 'typogrify/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
           # Import Plugin
           expand: true
           cwd: 'craft_plugins/import'
           src: '**'
           dest: 'dist/craft/plugins/import'
-          filter: 'isFile'
-        }
-        {
-          # No-Cache Plugin
-          expand: true
-          cwd: 'craft_plugins/craft-nocache'
-          src: 'nocache/**'
-          dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
       ]

@@ -2,7 +2,7 @@ module.exports = (grunt) ->
 
   global['craftMajor'] = 2
   global['craftMinor'] = 6
-  global['craftBuild'] = 2986
+  global['craftBuild'] = 2987
 
   # Automatically loads all Grunt tasks
   require('load-grunt-tasks')(grunt)

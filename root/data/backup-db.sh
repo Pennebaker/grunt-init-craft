@@ -11,5 +11,5 @@ NAME=`echo $NAME | tr "[:upper:]" "[:lower:]"`
 
 rm $LATEST
 mysqldump -uroot {%= domain_name %}_cmsdb_dev >> $LATEST
-mkdir backup
+mkdir -p backup
 cp $LATEST backup/$PREFIX$NAME-$FILE

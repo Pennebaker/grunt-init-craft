@@ -39,6 +39,6 @@
     "load-grunt-tasks": "^3.3.0"
   },
   "scripts": {
-    "postinstall": "grunt build"
+    "postinstall": "composer update && grunt build"
   }
 }

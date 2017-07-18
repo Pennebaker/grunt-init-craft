@@ -341,7 +341,7 @@ module.exports = (grunt) ->
         {
           # InstantAnalytics Plugin
           expand: true
-          cwd: 'craft_plugins'
+          cwd: 'craft/plugins'
           src: 'instantanalytics/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
@@ -355,7 +355,7 @@ module.exports = (grunt) ->
           filter: 'isFile'
         }
         {
-          # Minify Plugin
+          # Rich Variables Plugin
           expand: true
           cwd: 'craft/plugins'
           src: 'richvaraibles/**'
@@ -365,7 +365,7 @@ module.exports = (grunt) ->
         {
           # SEOmatic Plugin
           expand: true
-          cwd: 'craft_plugins'
+          cwd: 'craft/plugins'
           src: 'seomatic/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
@@ -373,7 +373,7 @@ module.exports = (grunt) ->
         {
           # Transcoder Plugin
           expand: true
-          cwd: 'craft_plugins'
+          cwd: 'craft/plugins'
           src: 'transcoder/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
@@ -493,50 +493,25 @@ module.exports = (grunt) ->
         {
           # Navee Plugin
           expand: true
-          cwd: 'fromtheoutfit'
+          cwd: 'vendor/fromtheoutfit'
           src: 'navee/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-====================================
-        {
-          # Super Table Plugin
-          expand: true
-          cwd: 'craft_plugins/SuperTable'
-          src: 'supertable/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
           # Redactor Extras Plugin
           expand: true
-          cwd: 'craft_plugins/Redactor-Extras'
+          cwd: 'vendor/elliotlewis/Redactor-Extras'
           src: 'redactorextras/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }
         {
-          # Sitemap Plugin
+          # Super Table Plugin
           expand: true
-          cwd: 'craft_plugins/craft-sitemap'
-          src: 'sitemap/**'
+          cwd: 'vendor/engram-design/SuperTable'
+          src: 'supertable/**'
           dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # SimpleMap Plugin
-          expand: true
-          cwd: 'craft_plugins/SimpleMap'
-          src: 'simplemap/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Import Plugin
-          expand: true
-          cwd: 'craft_plugins/import'
-          src: '**'
-          dest: 'dist/craft/plugins/import'
           filter: 'isFile'
         }
       ]

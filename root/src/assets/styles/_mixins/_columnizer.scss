@@ -2,7 +2,7 @@
  * Columnizer
  */
 
-@mixin columnizer($column-sizes: null, $column-pushes: null, $column-shifts: null, $vertical-gutter: null, $set-neat-grid: null, $set-max-width: null, $visual: null)
+@mixin columnizer($column-sizes: null, $column-pushes: null, $column-shifts: null, $vertical-gutter: null, $set-neat-grid: null, $set-max-width: null, $visual: null, $collapse: null)
 {
     $column-count: 0;
     @if $column-sizes
@@ -19,6 +19,7 @@
     {
         $neat-grid: $set-neat-grid !global;
     }
+    $grid-gutter: map-get($neat-grid, gutter);
     @if $set-max-width != null
     {
         $max-width: $set-max-width !global;
@@ -28,7 +29,11 @@
     {
         @include grid-visual;
     }
-    @include margin(null auto);
+    @if $collapse {
+        @include margin(null (0 - $grid-gutter));
+    } @else {
+        @include margin(null auto);
+    }
     @if $column-sizes
     {
         @if $max-width
@@ -59,12 +64,12 @@
                 @if $column-pushes
                 {
                     $column-shift: nth($column-pushes, $i);
-                        @include grid-push($column-shift);
+                    @include grid-push($column-shift);
                 }
                 @if $column-shifts
                 {
                     $column-shift: nth($column-shifts, $i);
-                        @include grid-shift($column-shift);
+                    @include grid-shift($column-shift);
                 }
             }
         }

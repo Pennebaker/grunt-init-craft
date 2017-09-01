@@ -46,7 +46,8 @@
     "lazysizes": "^2.0.7",
     "es6-object-assign": "rubennorte/es6-object-assign#^1.0.3",
     "loadjs": "^3.3.1",
-    "vue": "^2.2.1"
+    "vue": "^2.2.1",
+    "lory": "^2.2.1"
   },
   "resolutions": {
     "jquery": "~2.1.4",

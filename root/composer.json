@@ -60,18 +60,6 @@
     {
       "type":"package",
       "package": {
-        "name": "smcyr/Craft-FocusPoint",
-        "version":"1.1.3",
-        "source": {
-          "url": "https://github.com/smcyr/Craft-FocusPoint.git",
-          "type": "git",
-          "reference":"1.1.3"
-        }
-      }
-    },
-    {
-      "type":"package",
-      "package": {
         "name": "benjamminf/craft-neo",
         "version":"1.4.1",
         "source": {
@@ -168,12 +156,48 @@
     {
       "type":"package",
       "package": {
+        "name": "engram-design/SuperTable",
+        "version":"1.0.5",
+        "source": {
+          "url": "https://github.com/engram-design/SuperTable.git",
+          "type": "git",
+          "reference":"1.0.5"
+        }
+      }
+    },
+    {
+      "type":"package",
+      "package": {
+        "name": "engram-design/ImageResizer",
+        "version":"1.0.0",
+        "source": {
+          "url": "https://github.com/engram-design/ImageResizer.git",
+          "type": "git",
+          "reference":"1.0.0"
+        }
+      }
+    },
+    {
+      "type":"package",
+      "package": {
+        "name": "aelvan/FocalPointField-Craft",
+        "version":"1.0.1",
+        "source": {
+          "url": "https://github.com/aelvan/FocalPointField-Craft.git",
+          "type": "git",
+          "reference":"v1.0.1"
+        }
+      }
+    },
+    {
+      "type":"package",
+      "package": {
         "name": "aelvan/Imager-Craft",
-        "version":"1.6.1",
+        "version":"1.6.2",
         "source": {
           "url": "https://github.com/aelvan/Imager-Craft.git",
           "type": "git",
-          "reference":"v1.6.1"
+          "reference":"v1.6.2"
         }
       }
     },
@@ -212,32 +236,19 @@
           "reference":"v1.3.2"
         }
       }
-    },
-    {
-      "type":"package",
-      "package": {
-        "name": "engram-design/SuperTable",
-        "version":"1.0.5",
-        "source": {
-          "url": "https://github.com/engram-design/SuperTable.git",
-          "type": "git",
-          "reference":"1.0.5"
-        }
-      }
     }
   ],
   "require": {
     "pennebaker/craftcms-thearchitect": "1.6.0-beta.5",
-    "nystudio107/cookies": "1.0.4",
-    "nystudio107/instantanalytics": "1.1.8",
-    "nystudio107/minify": "1.1.2",
-    "nystudio107/richvariables": "1.0.5",
-    "nystudio107/seomatic": "1.1.47",
-    "nystudio107/transcoder": "1.1.1",
+    "nystudio107/cookies": "1.0.*",
+    "nystudio107/instantanalytics": "1.1.*",
+    "nystudio107/minify": "1.1.*",
+    "nystudio107/richvariables": "1.0.*",
+    "nystudio107/seomatic": "1.1.*",
+    "nystudio107/transcoder": "1.1.*",
     "craftcms/contact-form": "1.9.0",
     "mmikkel/CpFieldLinks-Craft": "1.2.2",
     "mmikkel/Reasons-Craft": "1.0.10",
-    "smcyr/Craft-FocusPoint": "1.1.3",
     "benjamminf/craft-neo": "1.4.1",
     "benjamminf/craft-quick-field": "0.3.4",
     "benjamminf/craft-nocache": "1.0.1",
@@ -246,10 +257,12 @@
     "jamiepittock/craft-typogrify": "1.0.1",
     "michaelrog/craftfieldnotes": "0.1",
     "engram-design/ExpandedSingles": "0.2.4",
-    "aelvan/Imager-Craft": "1.6.1",
+    "engram-design/SuperTable": "1.0.5",
+    "engram-design/ImageResizer": "1.0.0",
+    "aelvan/FocalPointField-Craft": "1.0.1",
+    "aelvan/Imager-Craft": "1.6.2",
     "fruitstudios/LinkIt": "2.3.4",
     "fromtheoutfit/navee": "v1.3.0",
-    "elliotlewis/Redactor-Extras": "1.3.2",
-    "engram-design/SuperTable": "1.0.5"
+    "elliotlewis/Redactor-Extras": "1.3.2"
   }
 }

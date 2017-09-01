@@ -6,7 +6,7 @@
 
 * Ensure your ssh public key has been added to your repo account for bitbucket and github.  
 * Ensure you have the latest stable version of node.js installed.  
-* Ensure you have [Valet](https://github.com/Pennebaker/grunt-init-craft/blob/master/valet.md) is installed  
+* Ensure you have [Valet](https://github.com/Pennebaker/grunt-init-craft/blob/master/valet.md) installed  
 
 ### In terminal run:
 

@@ -6,10 +6,12 @@ loadjs([
   async: false,
   success: () => {
     ready( () => {
+      // Document Ready
     })
     loadjs([
       '/assets/scripts/lazysizes.js',
       '/assets/scripts/lazysizes-plugins/ls.bgset.js',
+      '/assets/scripts/lazysizes-plugins/ls.respimg.min.js',
     ],
     {
       async: false,
@@ -23,6 +25,7 @@ loadjs([
             loadjs.ready('googlemaps',
             {
               success: () => {
+                initMaps()
               }
             })
           }

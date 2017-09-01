@@ -2,7 +2,7 @@
 
 @mixin tracking($tracking)
 {
-    letter-spacing: $tracking / 1000 * 1rem;
+    letter-spacing: $tracking / 1000 * 1em;
 }
 
 // Fontello Mixin

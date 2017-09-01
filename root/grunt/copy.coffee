@@ -176,6 +176,13 @@ module.exports = (grunt) ->
         }
         {
           expand: true
+          cwd: 'bower_components/lazysizes/plugins/respimg'
+          src: 'ls.respimg.min.js'
+          dest: 'dist/public/assets/scripts/lazysizes-plugins'
+          filter: 'isFile'
+        }
+        {
+          expand: true
           cwd: 'bower_components/dropkick/build/js'
           src: 'dropkick.min.js'
           dest: 'dist/public/assets/scripts'
@@ -199,6 +206,13 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'bower_components/vue/dist'
           src: 'vue.min.js'
+          dest: 'dist/public/assets/scripts'
+          filter: 'isFile'
+        }
+        {
+          expand: true
+          cwd: 'bower_components/lory/dist'
+          src: 'lory.js'
           dest: 'dist/public/assets/scripts'
           filter: 'isFile'
         }
@@ -475,6 +489,22 @@ module.exports = (grunt) ->
           filter: 'isFile'
         }
         {
+          # Super Table Plugin
+          expand: true
+          cwd: 'vendor/engram-design/SuperTable'
+          src: 'supertable/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
+          # Super Table Plugin
+          expand: true
+          cwd: 'vendor/engram-design/ImageResizer'
+          src: 'imageresizer/**'
+          dest: 'dist/craft/plugins'
+          filter: 'isFile'
+        }
+        {
           # Imager Plugin
           expand: true
           cwd: 'vendor/aelvan/Imager-Craft'
@@ -503,14 +533,6 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'vendor/elliotlewis/Redactor-Extras'
           src: 'redactorextras/**'
-          dest: 'dist/craft/plugins'
-          filter: 'isFile'
-        }
-        {
-          # Super Table Plugin
-          expand: true
-          cwd: 'vendor/engram-design/SuperTable'
-          src: 'supertable/**'
           dest: 'dist/craft/plugins'
           filter: 'isFile'
         }

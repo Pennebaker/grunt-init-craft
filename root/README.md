@@ -12,7 +12,7 @@
 
 1. `brew update && brew install bash` for OSX to upgrade to Bash 4.x  
 1. `npm i`  
-1. `cd dist && valet link nineenergyservice && cd ..`  
+1. `cd dist && valet link {%= domain_name %} && cd ..`  
 1. `composer update` only run if it did not run automatically after `npm i`  
 1. `grunt`  
 1. Import DB via [Dev DB Restore](#dev-db-restore)  

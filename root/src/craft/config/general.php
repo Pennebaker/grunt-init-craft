@@ -16,7 +16,7 @@ return array(
         'environmentVariables' => array(
             'baseUrl'  => 'http://{%= domain_name %}.{%= domain_tld %}/',
             'enableBugHerd' => false,
-            'BugHerdAPIKey' => '',
+            'bugHerdAPIKey' => '',
         )
     ),
 

@@ -158,8 +158,8 @@ let get = (url, onload, onerror = () => {}) => {
   request.send()
 }
 
-// Does this `el` match this `query selector`
-let matches = (el, selector) => {
+// Does this `query selector` match this `element`
+let matches = (selector, el) => {
   return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector)
 }
 
